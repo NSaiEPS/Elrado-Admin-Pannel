@@ -1,68 +1,116 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import "tailwindcss";
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+/* ============================= */
+/* FORCE SINGLE LINE LAYOUT */
+/* ============================= */
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.Toastify__toast {
+  display: flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  width: auto !important;
+  min-height: auto !important;
 }
 
-a {
+.Toastify__toast-body {
+  display: flex !important;
+  align-items: center !important;
+  width: auto !important;
+  flex: none !important;
+  white-space: nowrap !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.Toastify__toast-container {
+  width: auto !important;
+}
+
+/* ============================= */
+/* GLASS BASE STYLE */
+/* ============================= */
+
+.glassToast {
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-radius: 8px !important;
+  padding: 12px 18px !important;
+  color: #e2e8f0 !important;
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  transition: all 0.3s ease;
+
+  width: auto !important;
+  min-width: 300px !important;
+  /* max-width: none !important;  */
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+/* ============================= */
+/* SUCCESS */
+/* ============================= */
+
+.glassSuccess {
+  border: 1px solid rgba(34, 197, 94, 0.4) !important;
+  box-shadow: 0 0 25px rgba(34, 197, 94, 0.35);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.glassSuccess .Toastify__progress-bar {
+  background: linear-gradient(to right, #22c55e, #4ade80) !important;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.glassSuccess .Toastify__close-button {
+  color: #4ade80 !important;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* ============================= */
+/* ERROR */
+/* ============================= */
+
+.glassError {
+  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.35);
+}
+
+.glassError .Toastify__progress-bar {
+  background: linear-gradient(to right, #ef4444, #f87171) !important;
+}
+
+.glassError .Toastify__close-button {
+  color: #f87171 !important;
+}
+
+/* ============================= */
+/* DEFAULT */
+/* ============================= */
+
+.glassDefault {
+  border: 1px solid rgba(59, 130, 246, 0.4) !important;
+  box-shadow: 0 0 25px rgba(59, 130, 246, 0.35);
+}
+
+.glassDefault .Toastify__progress-bar {
+  background: linear-gradient(to right, #3b82f6, #60a5fa) !important;
+}
+
+.glassDefault .Toastify__close-button {
+  color: #60a5fa !important;
+}
+
+/* ============================= */
+/* TEXT BODY */
+/* ============================= */
+
+.toastBody {
+  font-size: 14px;
+  letter-spacing: 0.3px;
+  white-space: nowrap !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Hover */
+.glassToast:hover {
+  transform: translateY(-4px);
 }
